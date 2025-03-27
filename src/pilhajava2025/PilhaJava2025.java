@@ -18,22 +18,36 @@ public class PilhaJava2025 {
 
 
     public static void main(String[] args) {
-        int opcao;
+        int opcao, dado;
         System.out.println("Tamanho da pilha:");
         int tamanho = leia.nextInt();
         Pilha<Integer> minhaPilha = new Pilha(tamanho);
+        
         do{
             opcao = menu();
             switch(opcao){
                 case 1: System.out.println("Dado:");
-                        int dado = leia.nextInt();
+                        dado = leia.nextInt();
                         minhaPilha.push(dado);
+                break;
+                case 2: if(!minhaPilha.isEmpty())
+                            System.out.println("Topo removido:"
+                                    +minhaPilha.pop());
+                        else
+                            System.out.println("Pilha Vazia!");
+                break;
+                case 3: if(!minhaPilha.isEmpty())
+                            System.out.println("Topo:"
+                                    +minhaPilha.peek());
+                        else
+                            System.out.println("Pilha Vazia!");
                 break;
                 case 4: System.out.println(minhaPilha);
                 break;
                 case 0: System.out.println("Saindo");
                 break;
             }// fim swtich
+            leia.nextLine();// pausa
         }while(opcao!=0);
        
     }

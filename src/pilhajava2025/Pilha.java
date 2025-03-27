@@ -31,6 +31,18 @@ public class Pilha<T> {
         return false;
     }
     
+    public T pop(){
+       // T dado = this.elementos[this.topo];
+       // this.topo--;
+       // return dado;
+        return this.elementos[this.topo--];
+    }
+    public T peek(){
+       // T dado = this.elementos[this.topo];
+       // return dado;
+        return this.elementos[this.topo];
+    }
+    
     @Override
     public String toString(){
         
