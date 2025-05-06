@@ -33,6 +33,7 @@ public class PilhaJava2025 {
 
 
     public static void main(String[] args) {
+        
         int opcao, dado;
         System.out.println("Tamanho da pilha:");
         int tamanho = leia.nextInt();
@@ -45,12 +46,16 @@ public class PilhaJava2025 {
                         System.out.println("Dado:");
                         //ler dados do novoRecorde
                         lerRecorde(novoRecorde);
-                        if(!minhaPilha.isEmpty())
+                        if(!minhaPilha.isEmpty()){
                             if(novoRecorde.getTempo() < 
                                     minhaPilha.peek().getTempo())
                                 minhaPilha.push(novoRecorde);
-                        else
-                                minhaPilha.push(novoRecorde);
+                        }
+                            else{
+                                boolean inseriu = minhaPilha.push(novoRecorde);
+                                if(!inseriu)
+                                    System.out.println("Fila cheia");
+                            }
                         
                 break;
                 case 2: if(!minhaPilha.isEmpty())
