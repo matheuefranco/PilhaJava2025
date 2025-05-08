@@ -35,15 +35,17 @@ public class PilhaJava2025 {
     public static void main(String[] args) {
         
         int opcao, dado;
-        System.out.println("Tamanho da pilha:");
-        int tamanho = leia.nextInt();
-        Pilha<Recorde> minhaPilha = new Pilha(tamanho);
+        //System.out.println("Tamanho da pilha:");
+        //int tamanho = leia.nextInt();
+        PilhaEncadeada<Recorde> minhaPilha = new PilhaEncadeada();
         
         do{
             opcao = menu();
             switch(opcao){
                 case 1: Recorde novoRecorde = new Recorde();
                         System.out.println("Dado:");
+                       /* while(true)
+                            minhaPilha.push(10);*/
                         //ler dados do novoRecorde
                         lerRecorde(novoRecorde);
                         if(!minhaPilha.isEmpty()){
@@ -57,7 +59,7 @@ public class PilhaJava2025 {
                                     System.out.println("Fila cheia");
                             }
                         
-                break;
+                //break;
                 case 2: if(!minhaPilha.isEmpty())
                             System.out.println("Topo removido:"
                                     +minhaPilha.pop());

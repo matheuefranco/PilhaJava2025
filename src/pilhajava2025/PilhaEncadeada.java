@@ -34,6 +34,25 @@ public class PilhaEncadeada<T> {
        else
         return null;
     }
+    public T peek(){
+       if(!isEmpty()){
+           return this.topo.getDado();
+       }
+       else
+        return null;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder retorno =
+                new StringBuilder("Topo\n");
+        No<T> aux = this.topo;
+        while(aux!=null){
+            retorno.append(aux.getDado()+"\n");
+            aux = aux.getProximo();
+        }
+        return retorno.toString();
+    }
     
     
 }
